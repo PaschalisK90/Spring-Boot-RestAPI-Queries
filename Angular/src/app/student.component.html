@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student-Elements</title>
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <!------ Include the above in your HEAD tag ---------->
+
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  <script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
+  <!------ Include the above in your HEAD tag ---------->
+</head>
+<body>
+
+
+
+<input type="text" placeholder="Search With TeachersName"  name="Teachers name" [(ngModel)]="teachersName"/>
+<button type="button" (click)="findByTeachersName()">button</button>
+
+
+<table>
+
+
+
+
+
+<thead>
+
+  <td>
+   ID
+  </td>
+  <td>
+    Name
+  </td>
+  <td>
+    Surname
+  </td>
+
+  <td >
+    Email
+  </td>
+  <td >
+    Phone Number
+  </td>
+
+  <td >
+    Age
+  </td>
+  <td >
+    Password
+  </td>
+  <td >
+    Date of Birth
+  </td>
+
+
+
+  <td >
+    GRADE
+  </td>
+  <td >
+    SUMGRADE
+  </td>
+  <td >
+    AVERAGE
+  </td>
+  <td >
+    TEACHER'S NAME
+  </td>
+
+
+  <td >
+   GENDER
+  </td>
+  <td>
+    INCOME
+  </td>
+  <td >
+    NUMBER OF CHILDREN
+  </td>
+
+  <td >
+    SUBJECT
+  </td>
+  <td >
+    Semester
+  </td>
+
+  </thead>
+  <tbody >
+
+  <ng-container *ngFor="let student of students">
+<tr>
+    <td>{{student.id}}</td>
+    <td>{{student.nameStudent}}</td>
+    <td>{{student.surname}}</td>
+    <td >{{student.email}}</td>
+    <td >{{student.phoneNumber}}</td>
+    <td >{{student.age}}</td>
+    <td >{{student.password}}</td>
+    <td >{{student.dateOfBirth}}</td>
+
+    <td >{{student.grade}}</td>
+    <td >{{student.sumgrade}}</td>
+    <td >{{student.average}}</td>
+    <td >{{student.teachersName}}</td>
+    <td >{{student.gender}}</td>
+    <td >{{student.income}}</td>
+    <td >{{student.numberOfChildren}}</td>
+    <td >{{student.nameOfSubject}}</td>
+    <td >{{student.semester}}</td>
+
+</tr>
+
+  </ng-container>
+
+  </tbody>
+
+</table>
+
+<input type="text" placeholder="Delete With Surname"  name="surname" [(ngModel)]="students.surname"/>
+<button  (click)="deleteStudentBySurname(students.surname)">Delete</button>
+<br>
+<input type="text" placeholder="Delete With Name"  name="nameStudent" [(ngModel)]="students.nameStudent"/>
+<button  (click)="deleteByNameStudent(students.nameStudent)">Delete</button>
+
+</body>
+</html>
